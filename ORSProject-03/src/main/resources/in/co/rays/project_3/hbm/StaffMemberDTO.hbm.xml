@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+      "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.co.rays.project_3.dto">
+    <class name="StaffMemberDTO" table="ST_STAFF_MEMBER">
+
+        <id name="id" type="long">
+            <column name="ID"/>
+            <generator class="increment"/>
+        </id>
+
+        <property name="fullName" type="string">
+            <column name="FULL_NAME"/>
+        </property>
+
+        <property name="joiningDate" type="timestamp">
+            <column name="JOINING_DATE"/>
+        </property>
+
+        <property name="division" type="string">
+            <column name="DIVISION"/>
+        </property>
+
+        <property name="previousEmployeeId" type="int">
+            <column name="PREVIOUS_EMPLOYEE_ID"/>
+        </property>
+
+        <!-- BaseDTO fields -->
+        <property name="createdBy" type="string">
+            <column name="CREATED_BY"/>
+        </property>
+
+        <property name="modifiedBy" type="string">
+            <column name="MODIFIED_BY"/>
+        </property>
+
+        <property name="createdDatetime" type="timestamp">
+            <column name="CREATED_DATETIME"/>
+        </property>
+
+        <property name="modifiedDatetime" type="timestamp">
+            <column name="MODIFIED_DATETIME"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
