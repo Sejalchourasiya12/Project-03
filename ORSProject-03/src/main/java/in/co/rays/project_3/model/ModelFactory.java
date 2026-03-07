@@ -241,7 +241,175 @@ public final class ModelFactory {
 
 	    return patientModel;
 	}
+	
+	public QueueModelInt getQueueModel() {
 
+	    QueueModelInt queueModel =
+	            (QueueModelInt) modelCache.get("queueModel");
+
+	    if (queueModel == null) {
+
+	        if ("Hibernate".equals(DATABASE)) {
+	            queueModel = new QueueModelHibImpl();
+	        } else if ("JDBC".equals(DATABASE)) {
+	            queueModel = new QueueModelJDBCImpl();
+	        }
+
+	        modelCache.put("queueModel", queueModel);
+	    }
+
+	    return queueModel;
+	}
+	
+	public SessionModelInt getSessionModel() {
+
+		SessionModelInt sessionModel = (SessionModelInt) modelCache.get("sessionModel");
+
+		if (sessionModel == null) {
+
+			if ("Hibernate".equals(DATABASE)) {
+				sessionModel = new SessionModelHibImp();
+			}
+
+			if ("JDBC".equals(DATABASE)) {
+				sessionModel = new SessionModelHibImp(); // change if JDBC impl created
+			}
+
+			modelCache.put("sessionModel", sessionModel);
+		}
+
+		return sessionModel;
+	}
+
+	
+	public LeaveModelInt getLeaveModel() {
+
+	    LeaveModelInt leaveModel = (LeaveModelInt) modelCache.get("leaveModel");
+
+	    if (leaveModel == null) {
+
+	        if ("Hibernate".equals(DATABASE)) {
+	            leaveModel = new LeaveModelHibImp();
+	        }
+
+	        if ("JDBC".equals(DATABASE)) {
+	            leaveModel = new LeaveModelHibImp(); // change if JDBC impl created
+	        }
+
+	        modelCache.put("leaveModel", leaveModel);
+	    }
+
+	    return leaveModel;
+	}
+	
+	public AnnouncementModelInt getAnnouncementModel() {
+
+		AnnouncementModelInt AnnouncementModel = (AnnouncementModelInt) modelCache.get("AnnouncementModel");
+
+	    if (AnnouncementModel == null) {
+
+	        if ("Hibernate".equals(DATABASE)) {
+	        	AnnouncementModel = new AnnouncementModelHibImp();
+	        }
+
+	        if ("JDBC".equals(DATABASE)) {
+	        	AnnouncementModel = new AnnouncementModelHibImp(); // change if JDBC impl created
+	        }
+
+	        modelCache.put("AnnouncementModel", AnnouncementModel);
+	    }
+
+	    return AnnouncementModel;
+	}
+	
+	public CandidateModelInt getCandidateModel() {
+		CandidateModelInt candidateModel = (CandidateModelInt) modelCache.get("productModel");
+		if (candidateModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				candidateModel = new CandidateModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				candidateModel = new CandidateModelHibImpl();
+			}
+			modelCache.put("candidateModel", candidateModel);
+		}
+		return candidateModel;
+	}
+	
+
+	public ContactModelInt getContactModel() {
+		ContactModelInt contactModel = (ContactModelInt) modelCache.get("ContactModel");
+		if (contactModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				contactModel = new ContactModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				contactModel = new ContactModelHibImpl();
+			}
+			modelCache.put("contactModel", contactModel);
+		}
+		return contactModel;
+	}
+	
+	public FoodDeliveryModelInt getFoodDeliveryModel() {
+		FoodDeliveryModelInt foodDeliveryModel = (FoodDeliveryModelInt) modelCache.get("FoodDeliveryModel");
+		if (foodDeliveryModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				foodDeliveryModel = new FoodDeliveryModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				foodDeliveryModel = new FoodDeliveryModelHibImpl();
+				
+			}
+			modelCache.put("foodDeliveryModel", foodDeliveryModel);
+		}
+		return foodDeliveryModel;
+	}
+
+	public AssetModelInt getAssetModel() {
+		AssetModelInt assetModel = (AssetModelInt) modelCache.get("AssetModel");
+		if (assetModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				assetModel = new AssetModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				assetModel = new AssetModelHibImpl();
+				
+			}
+			modelCache.put("foodDeliveryModel", assetModel);
+		}
+		return assetModel;
+	}
+	public ReviewModelInt getReviewModel() {
+		ReviewModelInt reviewModel = (ReviewModelInt) modelCache.get("ReviewModel");
+		if (reviewModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				reviewModel = new ReviewModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				reviewModel = new ReviewModelHibImpl();
+				
+			}
+			modelCache.put("review", reviewModel);
+		}
+		return reviewModel;
+	}
+	public TrackingModelInt getTrackingModel() {
+		TrackingModelInt trackingModel = (TrackingModelInt) modelCache.get("TrackingModel");
+		if (trackingModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				trackingModel = new TrackingModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				trackingModel = new TrackingModelHibImpl();
+				
+			}
+			modelCache.put("tracking", trackingModel);
+		}
+		return trackingModel;
+	}
+
+	 
 	}
 
 

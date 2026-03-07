@@ -25,7 +25,7 @@ import in.co.rays.project_3.util.ServletUtility;
 /**
  * login functionality controller. perform login operation
  * 
- * @author Ajay Pratap Kerketta
+ * @author Sejal chourasiya
  *
  */
 

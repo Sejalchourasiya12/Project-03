@@ -55,6 +55,37 @@
 			resource="in/co/rays/project_3/hbm/StaffMemberDTO.hbm.xml"/>
 			
 		<mapping resource="in/co/rays/project_3/hbm/PatientDTO.hbm.xml"/>
+		
+		
+		
+		<mapping resource="in/co/rays/project_3/hbm/QueueDTO.hbm.xml"/>
+		<mapping
+			resource="in/co/rays/project_3/hbm/SessionDTO.hbm.xml" />
+			
+			
+			<mapping
+			resource="in/co/rays/project_3/hbm/LeaveDTO.hbm.xml" />
+			
+			 <mapping
+			resource="in/co/rays/project_3/hbm/AnnouncementDTO.hbm.xml" /> 
+			
+			<mapping
+			resource="in/co/rays/project_3/hbm/CandidateDTO.hbm.xml" /> 
+			
+			<mapping
+			resource="in/co/rays/project_3/hbm/ContactDTO.hbm.xml" /> 
+			
+			<mapping
+			resource="in/co/rays/project_3/hbm/FoodDeliveryDTO.hbm.xml" /> 
+			<mapping
+			resource="in/co/rays/project_3/hbm/AssetDTO.hbm.xml" /> 
+			<mapping
+			resource="in/co/rays/project_3/hbm/ReviewDTO.hbm.xml" /> 
+			
+			<mapping
+			resource="in/co/rays/project_3/hbm/TrackingDTO.hbm.xml" /> 
+			
+				
 
 	</session-factory>
 </hibernate-configuration>

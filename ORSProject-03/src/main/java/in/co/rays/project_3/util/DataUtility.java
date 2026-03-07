@@ -205,6 +205,20 @@ public class DataUtility {
 		}
 		return 0.0;
 	}
+	// DataUtility.java me add karein
+	/**
+	 * Converts java.util.Date to HTML5 datetime-local string
+	 * format: yyyy-MM-dd'T'HH:mm
+	 */
+	public static String getDateTimeLocalString(Date date) {
+	    if (date == null) return "";
+	    try {
+	        SimpleDateFormat dtf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+	        return dtf.format(date);
+	    } catch (Exception e) {
+	        return "";
+	    }
+	}
 
 
 	}

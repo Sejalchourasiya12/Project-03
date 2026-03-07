@@ -13,7 +13,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import in.co.rays.project_3.dto.BankDTO;
 import in.co.rays.project_3.dto.UserDTO;
 import in.co.rays.project_3.exception.ApplicationException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
@@ -26,7 +25,7 @@ import in.co.rays.project_3.util.HibDataSource;
 /**
  * Hibernate implements of User model
  * 
- *  @author Sejal Chourasiya
+ * @author krati
  *
  */
 public class UserModelHibImp implements UserModelInt {
@@ -51,12 +50,12 @@ public class UserModelHibImp implements UserModelInt {
 			session.save(dto);
 
 			tx.commit();
+
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			// TODO: handle exception
 			if (tx != null) {
 				tx.rollback();
-
 			}
 			throw new ApplicationException("Exception in User Add " + e.getMessage());
 		} finally {
@@ -200,7 +199,6 @@ public class UserModelHibImp implements UserModelInt {
 				if (dto.getFirstName() != null && dto.getFirstName().length() > 0) {
 					criteria.add(Restrictions.like("firstName", dto.getFirstName() + "%"));
 				}
-
 				if (dto.getLastName() != null && dto.getLastName().length() > 0) {
 					criteria.add(Restrictions.like("lastName", dto.getLastName() + "%"));
 				}

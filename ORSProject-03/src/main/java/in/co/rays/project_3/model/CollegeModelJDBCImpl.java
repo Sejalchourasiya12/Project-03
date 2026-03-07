@@ -343,4 +343,10 @@ public class CollegeModelJDBCImpl implements CollegeModelInt {
 		return dto;
 	}
 
+	@Override
+	public CollegeDTO findByName(String name) throws ApplicationException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

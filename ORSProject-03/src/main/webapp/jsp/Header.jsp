@@ -216,7 +216,7 @@
 							List</a>
 					</div></li>
 
-			<%-- 	<li class="nav-item dropdown"><a
+				<%-- 	<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
 					style="color: white;">Staff Member</a>
 					<div class="dropdown-menu">
@@ -247,21 +247,142 @@
 							href="<%=ORSView.PATIENT_LIST_CTL%>"> Patient List </a>
 					</div></li>
  --%>
- <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;">
-        Patient
-    </a>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="<%=ORSView.PATIENT_CTL%>">
-            <i class="fa fa-user-plus"></i> Add Patient
-        </a>
-        <a class="dropdown-item" href="<%=ORSView.PATIENT_LIST_CTL%>">
-            <i class="fa fa-list"></i> Patient List
-        </a>
-    </div>
-</li>
- 
- 
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;"> Patient </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.PATIENT_CTL%>"> <i
+							class="fa fa-user-plus"></i> Add Patient
+						</a> <a class="dropdown-item" href="<%=ORSView.PATIENT_LIST_CTL%>">
+							<i class="fa fa-list"></i> Patient List
+						</a>
+					</div></li>
+
+				<%--li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Queue</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.QUEUE_CTL%>"> <i
+							class="fa fa-list"></i> Add Queue
+						</a> <a class="dropdown-item" href="<%=ORSView.QUEUE_LIST_CTL%>">
+							<i class="fa fa-th-list"></i> Queue List
+						</a>
+					</div></li>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Session</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.SESSION_CTL%>"> <i
+							class="fa fa-clock"></i> Add Session
+						</a> <a class="dropdown-item" href="<%=ORSView.SESSION_LIST_CTL%>">
+							<i class="fa fa-list"></i> Session List
+						</a>
+					</div></li>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Leave</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.LEAVE_CTL%>"> <i
+							class="fa fa-calendar-plus"></i> Add Leave
+						</a> <a class="dropdown-item" href="<%=ORSView.LEAVE_LIST_CTL%>">
+							<i class="fa fa-list"></i> Session List
+						</a>
+					</div></li>--%>
+
+
+				<%-- <li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;"> Announcement </a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.ANNOUNCEMENT_CTL%>">
+							<i class="fa fa-bullhorn"></i> Add Announcement
+						</a> <a class="dropdown-item"
+							href="<%=ORSView.ANNOUNCEMENT_LIST_CTL%>"> <i
+							class="fa fa-list"></i> Announcement List
+						</a>
+
+					</div></li>--%>
+
+
+				<%--<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Candidate</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.CANDIDATE_CTL%>"> <i
+							class="fa fa-user-plus"></i> Add Candidate
+						</a> <a class="dropdown-item" href="<%=ORSView.CANDIDATE_LIST_CTL%>">
+							<i class="fa fa-list"></i> Candidate List
+						</a>
+					</div></li>--%>
+
+
+				<%--<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Contact</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.CONTACT_CTL%>"> <i
+							class="fa fa-address-book"></i> Add Contact
+						</a> <a class="dropdown-item" href="<%=ORSView.CONTACT_LIST_CTL%>">
+							<i class="fa fa-list"></i> Contact List
+						</a>
+					</div></li>--%>
+
+
+				<%-- <li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Food Delivery</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.FOOD_DELIVERY_CTL%>">
+							<i class="fa fa-utensils"></i> Add Food Order
+						</a> <a class="dropdown-item"
+							href="<%=ORSView.FOOD_DELIVERY_LIST_CTL%>"> <i
+							class="fa fa-list"></i> Food Order List
+						</a>
+
+					</div></li>--%>
+
+
+
+				<%--<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Asset</a>
+
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.ASSET_CTL%>"> <i
+							class="fa fa-box"></i> Add Asset
+						</a> <a class="dropdown-item" href="<%=ORSView.ASSET_LIST_CTL%>">
+							<i class="fa fa-list"></i> Asset List
+						</a>
+					</div></li>--%>
+
+				<%--<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Review</a>
+
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.REVIEW_CTL%>"> <i
+							class="fa fa-star"></i> Add Review
+						</a> <a class="dropdown-item" href="<%=ORSView.REVIEW_LIST_CTL%>">
+							<i class="fa fa-list"></i> Review List
+						</a>
+					</div></li>--%>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Tracking</a>
+
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.TRACKING_CTL%>"> <i
+							class="fa fa-truck"></i> Add Tracking
+						</a> <a class="dropdown-item" href="<%=ORSView.TRACKING_LIST_CTL%>">
+							<i class="fa fa-list"></i> Tracking List
+						</a>
+					</div></li>
 
 
 				<%

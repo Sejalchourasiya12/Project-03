@@ -3,7 +3,7 @@ package in.co.rays.project_3.controller;
 /**
  * ORS View Provide Loose Coupling
  * 
- * @author Ajay Pratap Kerketta
+ * @author Sejal Chourasiya
  *
  */
 public interface ORSView {
@@ -30,6 +30,9 @@ public interface ORSView {
 	public String STUDENT_LIST_VIEW = PAGE_FOLDER + "/StudentListView.jsp";
 	public String PATIENT_VIEW = PAGE_FOLDER + "/PatientView.jsp";
 	public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
+	public String QUEUE_VIEW = PAGE_FOLDER + "/QueueView.jsp";
+	public String QUEUE_LIST_VIEW = PAGE_FOLDER + "/QueueListView.jsp";
+	
 	
 	public String ROLE_VIEW = PAGE_FOLDER + "/RoleView.jsp";
 	public String ROLE_LIST_VIEW = PAGE_FOLDER + "/RoleListView.jsp";
@@ -51,6 +54,23 @@ public interface ORSView {
 	public String SUBJECT_LIST_VIEW = PAGE_FOLDER + "/SubjectListView.jsp";
 	public String PRODUCT_VIEW = PAGE_FOLDER + "/ProductView.jsp";
 	public String PRODUCT_LIST_VIEW = PAGE_FOLDER + "/ProductListView.jsp";
+	public String LEAVE_LIST_VIEW = PAGE_FOLDER + "/LeaveListView.jsp";
+	public String LEAVE_VIEW = PAGE_FOLDER + "/LeaveView.jsp";
+	public String ANNOUNCEMENT_VIEW = PAGE_FOLDER +"/AnnouncementView.jsp";
+	public String ANNOUNCEMENT_LIST_VIEW = PAGE_FOLDER +"/AnnouncementListView.jsp";
+	public String CANDIDATE_VIEW = PAGE_FOLDER +"/CandidateView.jsp";
+	public String CANDIDATE_LIST_VIEW = PAGE_FOLDER +"/CandidateListView.jsp";
+	public String CONTACT_VIEW = PAGE_FOLDER +"/ContactView.jsp";
+	public String CONTACT_LIST_VIEW = PAGE_FOLDER +"/ContactListView.jsp";
+	public String FOOD_DELIVERY_VIEW = PAGE_FOLDER +"/FoodDeliveryView.jsp";
+	public String FOOD_DELIVERY_LIST_VIEW = PAGE_FOLDER +"/FoodDeliveryListView.jsp";
+	public String ASSET_VIEW = PAGE_FOLDER +"/AssetView.jsp";
+	public String ASSET_LIST_VIEW = PAGE_FOLDER +"/AssetListView.jsp";
+	public String REVIEW_VIEW = PAGE_FOLDER +"/ReviewView.jsp";
+	public String REVIEW_LIST_VIEW = PAGE_FOLDER +"/ReviewListView.jsp";
+	public String TRACKING_VIEW = PAGE_FOLDER +"/TrackingView.jsp";
+	public String TRACKING_LIST_VIEW = PAGE_FOLDER +"/TrackingListView.jsp";
+
 
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
@@ -79,12 +99,45 @@ public interface ORSView {
 	public String TIMETABLE_LIST_CTL = APP_CONTEXT + "/ctl/TimeTableListCtl";
 	public String PRODUCT_CTL = APP_CONTEXT + "/ctl/ProductCtl";
 	public String PRODUCT_LIST_CTL = APP_CONTEXT + "/ctl/ProductListCtl";
+	public String QUEUE_CTL = APP_CONTEXT + "/ctl/QueueCtl";
+	public String QUEUE_LIST_CTL = APP_CONTEXT + "/ctl/QueueListCtl";
+	public String LEAVE_CTL = APP_CONTEXT + "/ctl/LeaveCtl";
+	public String LEAVE_LIST_CTL = APP_CONTEXT + "/ctl/LeaveListCtl";
+	public String ANNOUNCEMENT_CTL = APP_CONTEXT + "/ctl/AnnouncementCtl";
+	public String ANNOUNCEMENT_LIST_CTL = APP_CONTEXT + "/ctl/AnnouncementListCtl";
+	public String CANDIDATE_CTL = APP_CONTEXT + "/ctl/CandidateCtl";
+	public String CANDIDATE_LIST_CTL = APP_CONTEXT + "/ctl/CandidateListCtl";
+	public String CONTACT_CTL = APP_CONTEXT + "/ctl/ContactCtl";
+	public String CONTACT_LIST_CTL = APP_CONTEXT + "/ctl/ContactListCtl";
+	public String FOOD_DELIVERY_CTL = APP_CONTEXT + "/ctl/FoodDeliveryCtl";
+	public String FOOD_DELIVERY_LIST_CTL = APP_CONTEXT + "/ctl/FoodDeliveryListCtl";
+	public String ASSET_CTL = APP_CONTEXT + "/ctl/AssetCtl";
+	public String ASSET_LIST_CTL = APP_CONTEXT + "/ctl/AssetListCtl";
+	public String REVIEW_CTL = APP_CONTEXT + "/ctl/ReviewCtl";
+	public String REVIEW_LIST_CTL = APP_CONTEXT + "/ctl/ReviewListCtl";
+	public String TRACKING_CTL = APP_CONTEXT + "/ctl/TrackingCtl";
+	public String TRACKING_LIST_CTL = APP_CONTEXT + "/ctl/TrackingListCtl";
 
 	public String GET_MARKSHEET_CTL = APP_CONTEXT + "/ctl/GetMarksheetCtl";
 	public String CHANGE_PASSWORD_CTL = APP_CONTEXT + "/ctl/ChangePasswordCtl";
 	public String MY_PROFILE_CTL = APP_CONTEXT + "/ctl/MyProfileCtl";
 	public String FORGET_PASSWORD_CTL = APP_CONTEXT + "/ForgetPasswordCtl";
 	public String MARKSHEET_MERIT_LIST_CTL = APP_CONTEXT + "/ctl/MarksheetMeritListCtl";
+	
+	public static final String SESSION_CTL = APP_CONTEXT + "/ctl/SessionCtl";
+	public static final String SESSION_LIST_CTL = APP_CONTEXT + "/ctl/SessionListCtl";
+	public static final String SESSION_VIEW = "/jsp/SessionView.jsp";
+	public static final String SESSION_LIST_VIEW = "/jsp/SessionListView.jsp";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";
 

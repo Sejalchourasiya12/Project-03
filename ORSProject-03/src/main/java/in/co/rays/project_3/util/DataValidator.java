@@ -113,6 +113,20 @@ public class DataValidator {
 			return false;
 		}
 	}
+	
+	public static boolean isAssetCode(String val) {
+	    String assetCodeReg = "^AS-\\d+$";
+	    if (isNotNull(val)) {
+	        try {
+	            return val.matches(assetCodeReg);
+	        } catch (NumberFormatException e) {
+	            return false;
+	        }
+	    } else {
+	        return false;
+	    }
+	}
+	
 	public static boolean isPasswordLength(String val) {
 
 		if (isNotNull(val) && val.length() >= 8 && val.length() <= 12) {

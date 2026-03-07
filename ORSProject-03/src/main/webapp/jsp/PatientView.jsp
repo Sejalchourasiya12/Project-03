@@ -1,4 +1,4 @@
-<%@page import="in.co.rays.project_3.controller.PatientCtl"%>
+<%@page import="in.co.rays.project_3.controller.QueueCtl"%>
 <%@page import="in.co.rays.project_3.util.DataUtility"%>
 <%@page import="in.co.rays.project_3.util.ServletUtility"%>
 <%@page import="in.co.rays.project_3.controller.ORSView"%>
@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Patient View</title>
+<title>Queue View</title>
 
 <style>
 .hm {
@@ -18,10 +18,17 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    padding-top: 75px;
+    padding-top: 80px;
+    padding-bottom: 50px;
 }
-.input-group-addon {
-    box-shadow: 9px 8px 7px #001a33;
+
+.card-design {
+    box-shadow: 8px 8px 10px #001a33;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
 }
 </style>
 </head>
@@ -29,29 +36,28 @@
 <body class="hm">
 
 <%@include file="Header.jsp"%>
-<%@include file="calendar.jsp"%>
 
-<form action="<%=ORSView.PATIENT_CTL%>" method="post">
+<form action="<%=ORSView.QUEUE_CTL%>" method="post">
 
 <jsp:useBean id="dto"
-    class="in.co.rays.project_3.dto.PatientDTO"
+    class="in.co.rays.project_3.dto.QueueDTO"
     scope="request"/>
 
-<div class="row pt-3">
+<div class="row">
 <div class="col-md-4"></div>
 
 <div class="col-md-4">
-<div class="card input-group-addon">
-<div class="card-body">
+<div class="card card-design">
+<div class="card-body p-4">
 
 <%
     if (dto.getId() != null && dto.getId() > 0) {
 %>
-    <h3 class="text-center text-primary">Update Patient</h3>
+    <h3 class="text-center text-primary mb-4">Update Queue</h3>
 <%
     } else {
 %>
-    <h3 class="text-center text-primary">Add Patient</h3>
+    <h3 class="text-center text-primary mb-4">Add Queue</h3>
 <%
     }
 %>
@@ -72,60 +78,76 @@
 
 <input type="hidden" name="id" value="<%=dto.getId()%>">
 
-<!-- Patient Name -->
-<b>Patient Name *</b>
-<input type="text" name="name" class="form-control"
-    value="<%=DataUtility.getStringData(dto.getName())%>">
+<!-- Queue Code -->
+<div class="form-group">
+<b>Queue Code *</b>
+<input type="text" name="queueCode" class="form-control"
+    value="<%=DataUtility.getStringData(dto.getQueueCode())%>">
 <font color="red">
-<%=ServletUtility.getErrorMessage("name", request)%>
-</font><br>
+<%=ServletUtility.getErrorMessage("queueCode", request)%>
+</font>
+</div>
 
-<!-- Date of Birth -->
-<b>Date of Birth *</b>
-<input type="text" name="dob" id="datepicker2"
-    class="form-control" readonly
-    value="<%=DataUtility.getDateString(dto.getDob())%>">
+<!-- Queue Name -->
+<div class="form-group">
+<b>Queue Name *</b>
+<input type="text" name="queueName" class="form-control"
+    value="<%=DataUtility.getStringData(dto.getQueueName())%>">
 <font color="red">
-<%=ServletUtility.getErrorMessage("dob", request)%>
-</font><br>
+<%=ServletUtility.getErrorMessage("queueName", request)%>
+</font>
+</div>
 
-<!-- Mobile No -->
-<b>Mobile No *</b>
-<input type="text" name="mobileNo" class="form-control"
-    value="<%=DataUtility.getStringData(dto.getMobileNo())%>">
+<!-- Queue Size -->
+<div class="form-group">
+<b>Queue Size *</b>
+<input type="number" name="queueSize" class="form-control"
+    value="<%=dto.getQueueSize() != null ? dto.getQueueSize() : ""%>">
 <font color="red">
-<%=ServletUtility.getErrorMessage("mobileNo", request)%>
-</font><br>
+<%=ServletUtility.getErrorMessage("queueSize", request)%>
+</font>
+</div>
 
-<!-- Disease -->
-<b>Disease *</b>
-<input type="text" name="decease" class="form-control"
-    value="<%=DataUtility.getStringData(dto.getDecease())%>">
+<!-- Queue Status -->
+<div class="form-group">
+<b>Queue Status *</b>
+<select name="queueStatus" class="form-control">
+    <option value="">--Select--</option>
+    <option value="Active"
+        <%= "Active".equals(dto.getQueueStatus()) ? "selected" : "" %>>
+        Active
+    </option>
+    <option value="Inactive"
+        <%= "Inactive".equals(dto.getQueueStatus()) ? "selected" : "" %>>
+        Inactive
+    </option>
+</select>
 <font color="red">
-<%=ServletUtility.getErrorMessage("decease", request)%>
-</font><br>
+<%=ServletUtility.getErrorMessage("queueStatus", request)%>
+</font>
+</div>
 
 <!-- Buttons -->
-<div class="text-center">
+<div class="text-center mt-4">
 <%
     if (dto.getId() != null && dto.getId() > 0) {
 %>
     <input type="submit" name="operation"
-        value="<%=PatientCtl.OP_UPDATE%>"
-        class="btn btn-success">
+        value="<%=QueueCtl.OP_UPDATE%>"
+        class="btn btn-success mr-2">
 
     <input type="submit" name="operation"
-        value="<%=PatientCtl.OP_CANCEL%>"
+        value="<%=QueueCtl.OP_CANCEL%>"
         class="btn btn-warning">
 <%
     } else {
 %>
     <input type="submit" name="operation"
-        value="<%=PatientCtl.OP_SAVE%>"
-        class="btn btn-success">
+        value="<%=QueueCtl.OP_SAVE%>"
+        class="btn btn-success mr-2">
 
     <input type="submit" name="operation"
-        value="<%=PatientCtl.OP_RESET%>"
+        value="<%=QueueCtl.OP_RESET%>"
         class="btn btn-warning">
 <%
     }

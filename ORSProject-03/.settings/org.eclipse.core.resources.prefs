@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/in/co/rays/project_3/controller/QueueCtl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/model/AssetModelHibImpl.java=UTF-8
 encoding//src/main/webapp/jsp/Header.jsp=UTF-8
+encoding//src/main/webapp/jsp/QueueListView.jsp=UTF-8
+encoding//src/main/webapp/jsp/QueueView.jsp=UTF-8

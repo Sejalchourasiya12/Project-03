@@ -24,7 +24,7 @@ public static void main(String[] args) throws Exception {
 }
 public static void findByNameTest() throws ApplicationException {
 	// TODO Auto-generated method stub
-	CollegeDTO dto=model.fingByName("davv");
+	CollegeDTO dto=model.findByName("davv");
 	System.out.println(dto.getId());
     System.out.println(dto.getName());
     System.out.println(dto.getAddress());

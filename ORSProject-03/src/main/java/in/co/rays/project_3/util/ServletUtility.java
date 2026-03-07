@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import in.co.rays.project_3.controller.BaseCtl;
 import in.co.rays.project_3.controller.ORSView;
 import in.co.rays.project_3.dto.BaseDTO;
+import in.co.rays.project_3.exception.DatabaseException;
 
 
 /**
@@ -248,5 +249,11 @@ public class ServletUtility {
         int pageSize= (Integer) request.getAttribute("pageSize");
         return pageSize;
      }
+
+	public static void handleExceptionDBDown(DatabaseException e, HttpServletRequest req, HttpServletResponse resp,
+			String view) {
+		// TODO Auto-generated method stub
+		
+	}
    
 }

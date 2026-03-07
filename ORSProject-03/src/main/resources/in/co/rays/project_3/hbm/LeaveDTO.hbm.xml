@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.co.rays.project_3.dto">
+
+	<class name="LeaveDTO" table="ST_LEAVE">
+
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+
+		<property name="leaveCode" type="java.lang.String">
+			<column name="LEAVE_CODE" unique="true" not-null="true" />
+		</property>
+
+		<property name="employeeName" type="java.lang.String">
+			<column name="EMPLOYEE_NAME" />
+		</property>
+
+		<property name="leaveStartDate" type="java.util.Date">
+			<column name="LEAVE_START_DATE" />
+		</property>
+
+		<property name="leaveEndDate" type="java.util.Date">
+			<column name="LEAVE_END_DATE" />
+		</property>
+
+		<property name="leaveStatus" type="java.lang.String">
+			<column name="LEAVE_STATUS" />
+		</property>
+
+	</class>
+
+</hibernate-mapping>
+

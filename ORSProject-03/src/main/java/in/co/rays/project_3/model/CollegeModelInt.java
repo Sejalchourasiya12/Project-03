@@ -19,5 +19,5 @@ public List list(int pageNo,int pageSize)throws ApplicationException;
 public List search(CollegeDTO dto)throws ApplicationException;
 public List search(CollegeDTO dto,int pageNo,int pageSize)throws ApplicationException;
 public CollegeDTO findByPK(long pk)throws ApplicationException;
-public CollegeDTO fingByName(String name)throws ApplicationException;
+public CollegeDTO findByName(String name)throws ApplicationException;
 }
