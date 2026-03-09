@@ -70,6 +70,8 @@ public interface ORSView {
 	public String REVIEW_LIST_VIEW = PAGE_FOLDER +"/ReviewListView.jsp";
 	public String TRACKING_VIEW = PAGE_FOLDER +"/TrackingView.jsp";
 	public String TRACKING_LIST_VIEW = PAGE_FOLDER +"/TrackingListView.jsp";
+	public String DELIVERY_TRACKING_VIEW = PAGE_FOLDER +"/DeliveryTrackingView.jsp";
+	public String DELIVERY_TRACKING_LIST_VIEW = PAGE_FOLDER +"/DeliveryTrackingListView.jsp";
 
 
 
@@ -117,6 +119,8 @@ public interface ORSView {
 	public String REVIEW_LIST_CTL = APP_CONTEXT + "/ctl/ReviewListCtl";
 	public String TRACKING_CTL = APP_CONTEXT + "/ctl/TrackingCtl";
 	public String TRACKING_LIST_CTL = APP_CONTEXT + "/ctl/TrackingListCtl";
+	public String DELIVERY_TRACKING_CTL = APP_CONTEXT + "/ctl/DeliveryTrackingCtl";
+	public String DELIVERY_TRACKING_LIST_CTL = APP_CONTEXT + "/ctl/DeliveryTrackingListCtl";
 
 	public String GET_MARKSHEET_CTL = APP_CONTEXT + "/ctl/GetMarksheetCtl";
 	public String CHANGE_PASSWORD_CTL = APP_CONTEXT + "/ctl/ChangePasswordCtl";

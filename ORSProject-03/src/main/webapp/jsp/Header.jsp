@@ -372,7 +372,7 @@
 							<i class="fa fa-list"></i> Review List
 						</a>
 					</div></li>--%>
-				<li class="nav-item dropdown"><a
+				<%--<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
 					style="color: white;">Tracking</a>
 
@@ -382,9 +382,22 @@
 						</a> <a class="dropdown-item" href="<%=ORSView.TRACKING_LIST_CTL%>">
 							<i class="fa fa-list"></i> Tracking List
 						</a>
+					</div></li>--%>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Delivery Tracking</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" href="<%=ORSView.DELIVERY_TRACKING_CTL%>">
+							<i class="fa fa-truck"></i> Add Delivery Tracking
+						</a> <a class="dropdown-item"
+							href="<%=ORSView.DELIVERY_TRACKING_LIST_CTL%>"> <i
+							class="fa fa-list"></i> Delivery Tracking List
+						</a>
+
 					</div></li>
-
-
 				<%
 					}
 				%>

@@ -408,6 +408,21 @@ public final class ModelFactory {
 		}
 		return trackingModel;
 	}
+	
+	public DeliveryTrackingModelInt getDeliveryTrackingModel() {
+		DeliveryTrackingModelInt deliverytrackingModel = (DeliveryTrackingModelInt) modelCache.get("DeliveryTrackingModel");
+		if (deliverytrackingModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				deliverytrackingModel = new DeliveryTrackingModelHibImpl();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				deliverytrackingModel = new DeliveryTrackingModelHibImpl();
+				
+			}
+			modelCache.put("deliverytracking", deliverytrackingModel);
+		}
+		return deliverytrackingModel;
+	}
 
 	 
 	}

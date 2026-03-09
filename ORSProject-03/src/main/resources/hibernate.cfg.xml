@@ -85,6 +85,9 @@
 			<mapping
 			resource="in/co/rays/project_3/hbm/TrackingDTO.hbm.xml" /> 
 			
+			<mapping
+			resource="in/co/rays/project_3/hbm/DeliveryTrackingDTO.hbm.xml" /> 
+			
 				
 
 	</session-factory>

@@ -1,6 +1,7 @@
 package in.co.rays.project_3.controller;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,7 @@ import in.co.rays.project_3.util.ServletUtility;
 public class TrackingCtl extends BaseCtl {
 
     private static Logger log = Logger.getLogger(TrackingCtl.class);
+    private static final Pattern TRACKING_NUMBER_PATTERN = Pattern.compile("^\\d{5}$");
 
     protected boolean validate(HttpServletRequest request) {
 
@@ -32,6 +34,10 @@ public class TrackingCtl extends BaseCtl {
         if (DataValidator.isNull(request.getParameter("trackingNumber"))) {
             request.setAttribute("trackingNumber",
                     PropertyReader.getValue("error.require", "Tracking Number"));
+            pass = false;
+        }else if (!TRACKING_NUMBER_PATTERN.matcher(request.getParameter("trackingNumber")).matches()) {
+            request.setAttribute("trackingNumber",
+                    "Tracking Number must contain digits only");
             pass = false;
         }
 
