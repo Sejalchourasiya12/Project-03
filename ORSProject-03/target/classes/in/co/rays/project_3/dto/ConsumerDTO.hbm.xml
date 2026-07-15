@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-May-2026, 1:31:06 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.ConsumerDTO" table="CONSUMERDTO">
+        <id name="consumerCode" type="java.lang.String">
+            <column name="CONSUMERCODE" />
+            <generator class="assigned" />
+        </id>
+        <property name="consumerGroup" type="java.lang.String">
+            <column name="CONSUMERGROUP" />
+        </property>
+        <property name="topicName" type="java.lang.String">
+            <column name="TOPICNAME" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

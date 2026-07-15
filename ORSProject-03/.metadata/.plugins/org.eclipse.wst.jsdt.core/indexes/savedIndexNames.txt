@@ -1,0 +1,1 @@
+INDEX VERSION 1.4+C:\Users\Dell\Desktop\Rays Build\mission-project-3\ORSProject-03\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes

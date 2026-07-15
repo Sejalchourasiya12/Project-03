@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-May-2026, 1:04:36 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <subclass name="in.co.rays.project_3.dto.TrackingDTO" extends="in.co.rays.project_3.dto.BaseDTO" discriminator-value="TrackingDTO" lazy="false">
+        <property name="trackingNumber" type="java.lang.String">
+            <column name="TRACKINGNUMBER" />
+        </property>
+        <property name="currentLocation" type="java.lang.String">
+            <column name="CURRENTLOCATION" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+    </subclass>
+</hibernate-mapping>

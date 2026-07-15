@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-May-2026, 1:04:36 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <subclass name="in.co.rays.project_3.dto.ReviewDTO" extends="in.co.rays.project_3.dto.BaseDTO" discriminator-value="ReviewDTO" lazy="false">
+        <property name="reviewCode" type="java.lang.String">
+            <column name="REVIEWCODE" />
+        </property>
+        <property name="rating" type="java.lang.Integer">
+            <column name="RATING" />
+        </property>
+        <property name="comment" type="java.lang.String">
+            <column name="COMMENT" />
+        </property>
+        <property name="userId" type="java.lang.Long">
+            <column name="USERID" />
+        </property>
+    </subclass>
+</hibernate-mapping>

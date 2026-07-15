@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.PenaltyDTO" table="ST_PENALTY">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="penaltyCode" type="java.lang.String">
+            <column name="PENALTYCODE" />
+        </property>
+        <property name="penaltyReason" type="java.lang.String">
+            <column name="PENALTYREASON" />
+        </property>
+        <property name="penaltyAmount" type="java.math.BigDecimal">
+            <column name="PENALTYAMOUNT" />
+        </property>
+        <property name="penaltyStatus" type="java.lang.String">
+            <column name="PENALTYSTATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

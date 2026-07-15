@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-May-2026, 12:29:13 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.BookIssueDTO" table="ST_BOOKISSUEDTO">
+        <id name="id" type="java.lang.Long" access="field">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="issueCode" type="java.lang.String" access="field">
+            <column name="ISSUECODE" />
+        </property>
+        <property name="bookName" type="java.lang.String" access="field">
+            <column name="BOOKNAME" />
+        </property>
+        <property name="issueDate" type="java.util.Date" access="field">
+            <column name="ISSUEDATE" />
+        </property>
+        <property name="returnDate" type="java.util.Date" access="field">
+            <column name="RETURNDATE" />
+        </property>
+        <property name="issueStatus" type="java.lang.String" access="field">
+            <column name="ISSUESTATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

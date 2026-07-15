@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.LibraryDTO" table="ST_LIBRARYDTO">
+        <id name="id" type="java.lang.Long" access="field">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="bookName" type="java.lang.String" access="field">
+            <column name="BOOKNAME" />
+        </property>
+        <property name="authorName" type="java.lang.String" access="field">
+            <column name="AUTHORNAME" />
+        </property>
+        <property name="issueDate" type="java.lang.String" access="field">
+            <column name="ISSUEDATE" />
+        </property>
+        <property name="price" type="java.lang.String" access="field">
+            <column name="PRICE" />
+        </property>
+    </class>
+</hibernate-mapping>

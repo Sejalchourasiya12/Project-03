@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-May-2026, 1:04:36 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <subclass name="in.co.rays.project_3.dto.PenaltyDTO" extends="in.co.rays.project_3.dto.BaseDTO" discriminator-value="PenaltyDTO" lazy="false">
+        <property name="id" type="java.lang.Long">
+            <column name="ID" />
+        </property>
+        <property name="penaltyStatus" type="java.lang.String">
+            <column name="PENALTYSTATUS" />
+        </property>
+        <property name="penaltyReason" type="java.lang.String">
+            <column name="PENALTYREASON" />
+        </property>
+        <property name="penaltyCode" type="java.lang.String">
+            <column name="PENALTYCODE" />
+        </property>
+        <property name="penaltyAmount" type="java.math.BigDecimal">
+            <column name="PENALTYAMOUNT" />
+        </property>
+    </subclass>
+</hibernate-mapping>

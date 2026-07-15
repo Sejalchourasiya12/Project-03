@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/main/java/in/co/rays/project_3/controller/DonationCampCtl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/controller/EmployeePayrollListCtl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/controller/EnrollmentListCtl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/controller/PromotionCtl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/controller/QueueCtl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/controller/SubscriptionPlanCtl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/model/AssetModelHibImpl.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/model/ModelFactory.java=UTF-8
+encoding//src/main/java/in/co/rays/project_3/model/PromotionModelHibImpl.java=UTF-8
+encoding//src/main/webapp/jsp/BloodBankView.jsp=UTF-8
+encoding//src/main/webapp/jsp/DonationCampView.jsp=UTF-8
+encoding//src/main/webapp/jsp/EnrollmentListView.jsp=UTF-8
+encoding//src/main/webapp/jsp/Header.jsp=UTF-8
+encoding//src/main/webapp/jsp/LibraryListView.jsp=UTF-8
+encoding//src/main/webapp/jsp/QueueListView.jsp=UTF-8
+encoding//src/main/webapp/jsp/QueueView.jsp=UTF-8

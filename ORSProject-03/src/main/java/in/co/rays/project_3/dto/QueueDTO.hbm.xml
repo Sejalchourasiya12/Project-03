@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-May-2026, 1:04:36 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <subclass name="in.co.rays.project_3.dto.QueueDTO" extends="in.co.rays.project_3.dto.BaseDTO" discriminator-value="QueueDTO" lazy="false">
+        <property name="queueCode" type="java.lang.String">
+            <column name="QUEUECODE" />
+        </property>
+        <property name="queueName" type="java.lang.String">
+            <column name="QUEUENAME" />
+        </property>
+        <property name="queueSize" type="java.lang.Integer">
+            <column name="QUEUESIZE" />
+        </property>
+        <property name="queueStatus" type="java.lang.String">
+            <column name="QUEUESTATUS" />
+        </property>
+    </subclass>
+</hibernate-mapping>
