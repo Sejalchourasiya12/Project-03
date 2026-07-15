@@ -1,19 +1,14 @@
-
 package in.co.rays.project_3.model;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.exception.JDBCConnectionException;
-
 import in.co.rays.project_3.dto.UserDTO;
 import in.co.rays.project_3.exception.ApplicationException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
@@ -27,21 +22,23 @@ import in.co.rays.project_3.util.HibDataSource;
  * Hibernate implements of User model
  * 
  * @author Sejal Chourasiya
+ * 
  *
  */
 public class UserModelHibImp implements UserModelInt {
 
 	public long add(UserDTO dto) throws ApplicationException, DuplicateRecordException {
 
-		System.out.println("in addddddddddddd");
 		// TODO Auto-generated method stub
 		/* log.debug("usermodel hib start"); */
 
 		UserDTO existDto = null;
 		existDto = findByLogin(dto.getLogin());
+		
 		if (existDto != null) {
 			throw new DuplicateRecordException("login id already exist");
 		}
+		
 		Session session = HibDataSource.getSession();
 		Transaction tx = null;
 		try {
@@ -49,20 +46,15 @@ public class UserModelHibImp implements UserModelInt {
 			int pk = 0;
 			tx = session.beginTransaction();
 
-			System.out.println("trac1");
 			session.save(dto);
-			System.out.println("trac2");
+
 			tx.commit();
-			System.out.println("trac3");
+
 		} catch (HibernateException e) {
-			e.printStackTrace();
-			// TODO: handle exception
 			if (tx != null) {
 				tx.rollback();
-
 			}
-			HibDataSource.handleException(e);
-			throw new ApplicationException("Exception in User Add" + e.getMessage());
+			throw new ApplicationException("Exception in User Add " + e.getMessage());
 		} finally {
 			session.close();
 		}
@@ -84,7 +76,6 @@ public class UserModelHibImp implements UserModelInt {
 			if (tx != null) {
 				tx.rollback();
 			}
-			HibDataSource.handleException(e);
 			throw new ApplicationException("Exception in User Delete" + e.getMessage());
 		} finally {
 			session.close();
@@ -98,19 +89,18 @@ public class UserModelHibImp implements UserModelInt {
 		UserDTO existDto = findByLogin(dto.getLogin());
 		// Check if updated LoginId already exist
 		if (existDto != null && existDto.getId() != dto.getId()) {
-			throw new DuplicateRecordException("LoginId is already exist");
+			 throw new DuplicateRecordException("LoginId is already exist");
 		}
 
 		try {
 			session = HibDataSource.getSession();
 			tx = session.beginTransaction();
-			session.update(dto);
+			session.saveOrUpdate(dto);
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null) {
 				tx.rollback();
 			}
-			HibDataSource.handleException(e);
 			throw new ApplicationException("Exception in User update" + e.getMessage());
 		} finally {
 			session.close();
@@ -125,8 +115,7 @@ public class UserModelHibImp implements UserModelInt {
 			session = HibDataSource.getSession();
 			dto = (UserDTO) session.get(UserDTO.class, pk);
 
-		} catch (Exception e) {
-			HibDataSource.handleException(e);
+		} catch (HibernateException e) {
 			throw new ApplicationException("Exception : Exception in getting User by pk");
 		} finally {
 			session.close();
@@ -147,8 +136,9 @@ public class UserModelHibImp implements UserModelInt {
 			if (list.size() == 1) {
 				dto = (UserDTO) list.get(0);
 			}
-		} catch (Exception e) {
-			HibDataSource.handleException(e);
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			throw new ApplicationException("Exception in getting User by Login " + e.getMessage());
 
 		} finally {
 			session.close();
@@ -177,8 +167,7 @@ public class UserModelHibImp implements UserModelInt {
 			}
 			list = criteria.list();
 
-		} catch (Exception e) {
-			HibDataSource.handleException(e);
+		} catch (HibernateException e) {
 			throw new ApplicationException("Exception : Exception in  Users list");
 		} finally {
 			session.close();
@@ -195,8 +184,6 @@ public class UserModelHibImp implements UserModelInt {
 	public List search(UserDTO dto, int pageNo, int pageSize) throws ApplicationException {
 		// TODO Auto-generated method stub
 
-		System.out.println(
-				"hellllo" + pageNo + "....." + pageSize + "........" + dto.getId() + "......" + dto.getRoleId());
 		Session session = null;
 		ArrayList<UserDTO> list = null;
 		try {
@@ -209,7 +196,6 @@ public class UserModelHibImp implements UserModelInt {
 				if (dto.getFirstName() != null && dto.getFirstName().length() > 0) {
 					criteria.add(Restrictions.like("firstName", dto.getFirstName() + "%"));
 				}
-
 				if (dto.getLastName() != null && dto.getLastName().length() > 0) {
 					criteria.add(Restrictions.like("lastName", dto.getLastName() + "%"));
 				}
@@ -242,8 +228,8 @@ public class UserModelHibImp implements UserModelInt {
 				criteria.setMaxResults(pageSize);
 			}
 			list = (ArrayList<UserDTO>) criteria.list();
-		} catch (Exception e) {
-			HibDataSource.handleException(e);
+			System.out.println("idhar sari list"+ list);
+		} catch (HibernateException e) {
 			throw new ApplicationException("Exception in user search");
 		} finally {
 			session.close();
@@ -252,38 +238,28 @@ public class UserModelHibImp implements UserModelInt {
 		return list;
 	}
 
-	@Override
 	public UserDTO authenticate(String login, String password) throws ApplicationException {
-
+		// TODO Auto-generated method stub
 		Session session = null;
 		UserDTO dto = null;
-
+		
 		try {
+			
 			session = HibDataSource.getSession();
-
-			Query q = session.createQuery("from UserDTO where login = ? and password = ?");
+			Query q = session.createQuery("from UserDTO where login=? and password=?");
 			q.setString(0, login);
 			q.setString(1, password);
-
 			List list = q.list();
-
-			if (list != null && list.size() > 0) {
+			if (list.size() > 0) {
 				dto = (UserDTO) list.get(0);
-			}
+			} else {
+				dto = null;
 
-		} catch (JDBCConnectionException e) {
-
-			System.out.println(" Database connection problem");
+			}			
+		} catch (Exception e) {
 			e.printStackTrace();
-			HibDataSource.handleException(e);
-			throw new ApplicationException("Exception is authenticate");
-
-		} finally {
-			if (session != null) {
-				session.close();
-			}
+			throw new ApplicationException("Database Server Down");
 		}
-
 		return dto;
 	}
 
@@ -299,13 +275,12 @@ public class UserModelHibImp implements UserModelInt {
 		UserDTO dtoExist = null;
 
 		dtoExist = findByPK(id);
-		System.out.println("in method password" + dtoExist.getPassword() + "jjjjjjj" + oldPassword);
 		if (dtoExist != null && dtoExist.getPassword().equals(oldPassword)) {
 			dtoExist.setPassword(newPassword);
 			try {
 				update(dtoExist);
 			} catch (DuplicateRecordException e) {
-				HibDataSource.handleException(e);
+
 				throw new ApplicationException("LoginId is already exist");
 			}
 			flag = true;
@@ -336,10 +311,9 @@ public class UserModelHibImp implements UserModelInt {
 	}
 
 	public boolean forgetPassword(String login) throws RecordNotFoundException, ApplicationException {
-		boolean flag = false;
-		try {
+		// TODO Auto-generated method stub
 		UserDTO userData = findByLogin(login);
-		
+		boolean flag = false;
 		if (userData == null) {
 			System.out.println("email id does not exist");
 			throw new RecordNotFoundException("Email Id Does not matched.");
@@ -359,9 +333,7 @@ public class UserModelHibImp implements UserModelInt {
 		EmailUtility.sendMail(msg);
 		System.out.println(flag);
 		flag = true;
-		}catch (Exception e) {
-			HibDataSource.handleException(e);
-		}
+
 		return flag;
 	}
 
