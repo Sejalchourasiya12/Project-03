@@ -1,22 +1,19 @@
 package in.co.rays.project_3.util;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import in.co.rays.project_3.controller.BaseCtl;
 import in.co.rays.project_3.controller.ORSView;
 import in.co.rays.project_3.dto.BaseDTO;
-import in.co.rays.project_3.exception.DatabaseException;
 
 
 /**
  * ServletUtility provides the servlet util services 
- *  @author Sejal Chourasiya
+ * @author Sejal chourasiya
  *
  */
 public class ServletUtility {
@@ -61,9 +58,25 @@ public class ServletUtility {
     public static void handleException(Exception e, HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException {
         request.setAttribute("exception", e);
-        e.printStackTrace();
         response.sendRedirect(ORSView.ERROR_CTL);
 
+    }
+    
+    public static void handleDBDown(String page, HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        setErrorMessage("Database Server Down please try again", request);
+        forward(page, request, response);
+    }
+    
+    public static void handleListDBDown(String page, BaseDTO dto, int pageNo, int pageSize, HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
+        setErrorMessage("Database server down Unable to load list", request);
+        setList(new ArrayList<>(), request);
+        setDto(dto, request);
+        request.setAttribute("pageNo", pageNo);
+		request.setAttribute("pageSize", pageSize);
+		request.setAttribute("nextListSize", 0);
+        forward(page, request, response);
     }
 
     /**
@@ -208,6 +221,12 @@ public class ServletUtility {
     public static List getList(HttpServletRequest request) {
         return (List) request.getAttribute("list");
     }
+    
+//    public static List getList(HttpServletRequest request) {
+//        List list = (List) request.getAttribute("list");
+//        return (list == null) ? new ArrayList() : list;
+//    }
+
 
     /**
      * Sets Page Number for List pages
@@ -250,11 +269,5 @@ public class ServletUtility {
         int pageSize= (Integer) request.getAttribute("pageSize");
         return pageSize;
      }
-
-	public static void handleExceptionDBDown(DatabaseException e, HttpServletRequest req, HttpServletResponse resp,
-			String view) {
-		// TODO Auto-generated method stub
-		
-	}
    
 }

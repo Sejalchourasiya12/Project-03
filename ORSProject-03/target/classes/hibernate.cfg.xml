@@ -145,6 +145,8 @@
 			<mapping resource="in/co/rays/project_3/dto/VoiceCommandDTO.hbm.xml"/>
 			
 			<mapping resource="in/co/rays/project_3/dto/AIRecommendationDTO.hbm.xml"/>
+			
+			<mapping resource="in/co/rays/project_3/dto/VehicleInsuranceDTO.hbm.xml"/>
  
 			
 			

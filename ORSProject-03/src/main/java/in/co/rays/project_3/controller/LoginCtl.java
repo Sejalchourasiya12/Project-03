@@ -25,10 +25,14 @@ import in.co.rays.project_3.util.ServletUtility;
 /**
  * login functionality controller. perform login operation
  * 
- * @author Sejal chourasiya
+ * 
  *
  */
 
+/**
+ * @author Sejal Chourasiya
+ *
+ */
 @WebServlet(urlPatterns = { "/LoginCtl" })
 public class LoginCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
@@ -95,9 +99,8 @@ public class LoginCtl extends BaseCtl {
 				dto = model.findByPK(id);
 				ServletUtility.setDto(dto, request);
 			} catch (ApplicationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				ServletUtility.handleException(e, request, response);
+			
+				ServletUtility.handleDBDown(getView(), request, response);
 				return;
 			}
 
@@ -108,6 +111,7 @@ public class LoginCtl extends BaseCtl {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		
 		String op = request.getParameter("operation");
 		
 
@@ -119,21 +123,30 @@ public class LoginCtl extends BaseCtl {
 		// long id = DataUtility.getLong(request.getParameter("id"));
 
 		if (OP_SIGN_IN.equalsIgnoreCase(op)) {
+			
 			UserDTO dto = (UserDTO) populateDTO(request);
+			
 			try {
 				dto = userModel.authenticate(dto.getLogin(), dto.getPassword());
+				
 				if (dto != null) {
+					
 					session.setAttribute("user", dto);
 					long roleId = dto.getRoleId();
 					RoleDTO rdto = model1.findByPK(roleId);
+					
 					if (rdto != null) {
 						session.setAttribute("role", rdto.getName());
 					}
+					
 					String uri = (String) request.getParameter("uri");
+					
 					if (uri == null || "null".equalsIgnoreCase(uri)) {
 						ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
 						return;
+						
 					} else {
+						
 						if (rdto.getId() == 1) {
 							ServletUtility.redirect(uri, request, response);
 						} else {
@@ -150,8 +163,7 @@ public class LoginCtl extends BaseCtl {
 				}
 
 			} catch (ApplicationException e) {
-				log.error(e);
-				ServletUtility.handleException(e, request, response);
+				ServletUtility.handleDBDown(getView(), request, response);
 				return;
 			}
 
