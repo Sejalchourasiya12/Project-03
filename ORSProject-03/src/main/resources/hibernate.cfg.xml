@@ -133,19 +133,19 @@
 			
 			<mapping resource="in/co/rays/project_3/hbm/PolicyDTO.hbm.xml"/>
 			
-			<mapping resource="in/co/rays/project_3/dto/VehicleInsuranceDTO.hbm.xml"/>
+			<mapping resource="in/co/rays/project_3/hbm/VehicleInsuranceDTO.hbm.xml"/>
 			
-			<mapping resource="in/co/rays/project_3/dto/MobileStoreDTO.hbm.xml"/>
+			<mapping resource="in/co/rays/project_3/hbm/MobileStoreDTO.hbm.xml"/>
 			
-			<mapping resource="in/co/rays/project_3/dto/EnergyConsumptionDTO.hbm.xml"/>
+			<mapping resource="in/co/rays/project_3/hbm/EnergyConsumptionDTO.hbm.xml"/>
 			
-			<mapping resource="in/co/rays/project_3/dto/DroneDeliveryDTO.hbm.xml"/>
+			<mapping resource="in/co/rays/project_3/hbm/DroneDeliveryDTO.hbm.xml"/>
 			
-			<mapping resource="in/co/rays/project_3/dto/SmartParkingDTO.hbm.xml"/>
+			<mapping resource="in/co/rays/project_3/hbm/SmartParkingDTO.hbm.xml"/>
 			
-			<mapping resource="in/co/rays/project_3/dto/VoiceCommandDTO.hbm.xml"/>
+			<mapping resource="in/co/rays/project_3/hbm/VoiceCommandDTO.hbm.xml"/>
 			
-			<mapping resource="in/co/rays/project_3/dto/AIRecommendationDTO.hbm.xml"/>
+			<mapping resource="in/co/rays/project_3/hbm/AIRecommendationDTO.hbm.xml"/>
 			
  
 			

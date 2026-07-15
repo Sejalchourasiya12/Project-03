@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.SmartParkingDTO" table="ST_SMARTPARKINGDTO">
+        <id name="id" type="java.lang.Long" access="field">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="parkingCode" type="java.lang.String" access="field">
+            <column name="PARKINGCODE" />
+        </property>
+        <property name="vechicleNumber" type="java.lang.String" access="field">
+            <column name="VECHICLENUBER" />
+        </property>
+        <property name="slotNumber" type="java.lang.String" access="field">
+            <column name="SLOTNUMBER" />
+        </property>
+        <property name="status" type="java.lang.String" access="field">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>
