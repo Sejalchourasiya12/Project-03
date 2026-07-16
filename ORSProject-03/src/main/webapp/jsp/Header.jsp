@@ -715,6 +715,21 @@
 						</a>
 					</div></li>
 
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+					style="color: white;">Weather Alert</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="<%=ORSView.WEATHER_ALERT_CTL%>">
+							<i class="fa fa-cloud-sun-rain"></i> Add Weather Alert
+						</a> <a class="dropdown-item"
+							href="<%=ORSView.WEATHER_ALERT_LIST_CTL%>"> <i
+							class="fa fa-list"></i> Weather Alert List
+						</a>
+					</div></li>
+
+
+
 				<%
 					}
 				%>

@@ -299,6 +299,11 @@ public interface ORSView {
 	public String STAFF_MEMBER_LIST_CTL  = APP_CONTEXT + "/ctl/StaffMemberListCtl";
 	
 	
+	public String WEATHER_ALERT_VIEW      = PAGE_FOLDER + "/WeatherAlertView.jsp";
+	public String WEATHER_ALERT_LIST_VIEW = PAGE_FOLDER + "/WeatherAlertListView.jsp";
+	public String WEATHER_ALERT_CTL       = APP_CONTEXT + "/ctl/WeatherAlertCtl";
+	public String WEATHER_ALERT_LIST_CTL  = APP_CONTEXT + "/ctl/WeatherAlertListCtl";
+	
 	
 
 	public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";

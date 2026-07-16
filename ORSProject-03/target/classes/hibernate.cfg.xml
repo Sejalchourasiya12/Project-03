@@ -147,6 +147,9 @@
 			
 			<mapping resource="in/co/rays/project_3/hbm/AIRecommendationDTO.hbm.xml"/>
 			
+			
+			<mapping resource="in/co/rays/project_3/hbm/WeatherAlertDTO.hbm.xml"/>
+			
  
 			
 			

@@ -762,6 +762,21 @@ public final class ModelFactory {
 	    }
 	    return aiRecommendationModel;
 	}
+	
+	
+	public WeatherAlertModelInt getWeatherAlertModel() {
+	    WeatherAlertModelInt weatherAlertModel = (WeatherAlertModelInt) modelCache.get("weatherAlertModel");
+	    if (weatherAlertModel == null) {
+	        if ("Hibernate".equals(DATABASE)) {
+	            weatherAlertModel = new WeatherAlertModelHibImpl();
+	        }
+	        if ("JDBC".equals(DATABASE)) {
+	            weatherAlertModel = new WeatherAlertModelHibImpl();
+	        }
+	        modelCache.put("weatherAlertModel", weatherAlertModel);
+	    }
+	    return weatherAlertModel;
+	}
 
 
 	 
